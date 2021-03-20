@@ -49,7 +49,7 @@ Ex:
 ----
 Action and parameters
 parameter name: quantidade
-entity: @sts.number
+entity: @sys.number
 value: $quantidade
 ````
 - Ativar o Webhook na seção `Fulfillment`
