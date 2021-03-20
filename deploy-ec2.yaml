@@ -5,7 +5,7 @@
   tasks:
   - name: Creating an EC2 instance
     ec2:
-      key_name: "{{ my-key-pair-on-aws }}" ## SSH key-pairs
+      key_name: "{{ my_keys_on_aws }}" ## SSH key-pairs
       instance_type: t2.micro
       image: ami-042e8287309f5df03
       region: us-east-1
