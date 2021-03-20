@@ -1,0 +1,25 @@
+---
+- name: Deploy a instance on AWS
+  hosts: localhost
+
+  tasks:
+  - name: Creating an EC2 instance
+    ec2:
+      key_name: "{{ my-key-pair-on-aws }}" ## SSH key-pairs
+      instance_type: t2.micro
+      image: ami-042e8287309f5df03
+      region: us-east-1
+      group_id: "{{ security_group }}" ## Firewall rules
+      wait: yes
+      count: 1
+      vpc_subnet_id: subnet-cd7b5a80 ## Subnet ID from my region on AWS
+      assign_public_ip: yes
+      instance_tags:
+        proviosionby: dialog_flow ## Add a TAG on instance
+      aws_access_key: "{{ my_aws_access_key }}" ## aws_access_key_id
+      aws_secret_key: "{{ aws_secret_key }}" ## aws_secret_access_key
+      security_token: "{{ security_token }}" ## aws_session_token
+    register: minha_ec2y
+
+  - debug:
+      var: minha_ec2y

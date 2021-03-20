@@ -1,0 +1,9 @@
+[localhost]
+127.0.0.1 ansible_connection=local
+
+[localhost:vars]
+my_aws_access_key="my_data_access_from_console"
+aws_secret_key="my_data_access_from_console"
+security_token="my_data_access_from_console"
+security_group="my_data_access_from_console"
+my-key-pair-on-aws="my_data_access_from_console"
