@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage('Deploy EC2'){
+            steps{
+                sh '''
+                cd /var/lib/jenkins/jobs/devops-aws/devops-jenkins-aws && ansible-playbook -i inventory deploy-ec2.yaml
+                '''
+            }
+        }
+    }
+}
