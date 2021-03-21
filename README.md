@@ -52,5 +52,5 @@ parameter name: quantidade
 entity: @sys.number
 value: $quantidade
 ````
-- Ativar o Webhook na seção `Fulfillment`
+- Ativar o Webhook na seção `Fulfillment` com a URL gerada pelo `API Gateway`
 
